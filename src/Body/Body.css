@@ -109,7 +109,28 @@
     background-color:black;
 }
 
+@media (max-width:600px) {
+    #body{
+        width: 100vw;
+        right: 0vw;
+        border-radius: 0.8rem;
+    }
 
+    #bodyul{
+        width: 100vw;
+        flex-direction: row;
+        justify-content:space-evenly;        
+
+    }
+
+    #bodyli{
+        width: 40vw;
+    }
+    #image{
+        width: 100%;
+    }
+    
+}
 
 
 

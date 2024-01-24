@@ -129,10 +129,20 @@
     border: 0px solid transparent;
 }
 
+#fullsongbtn::before:hover{
+    content: " fullsong ";
+    color: white;    
+    height: fit-content;
+    display: fixed;
+    z-index: 200;
+    width: auto;
+}
+
 #fullsong{
     cursor: pointer;
     text-decoration: none;
 }
+
 
 .persong:hover{
     background-color: rgba(150,150,150, 0.3);
@@ -162,4 +172,15 @@
     width: 100%;
     background-color: rgba(150,150,150, 0.3);
     display: absolute;
+}
+
+@media (max-width:600px) {
+    #sidebar{
+        display: absolute;
+        width: 100vw;
+        z-index: 200;
+        transform: scale(0);
+    }
+    
+
 }

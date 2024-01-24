@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./playlist.css";
 import axios from "axios";
+import { setplaylistid } from "../Store/player";
+import { useNavigate } from "react-router-dom";
 
 function Playlist() {
   let data = useSelector((state) => state.playr.playlist);
   let accessToken = useSelector((state) => state.playr.token);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [play, setplay] = useState(null);
   const [value, setvalue] = useState(null);
   const [error, seterror] = useState(null);
@@ -16,14 +20,13 @@ function Playlist() {
   }
 
   async function playlist(name) {
-    let data = await axios.get(
-      `https://api.spotify.com/v1/browse/categories/${name}/playlists`,
-      {
+    let data = await axios
+      .get(`https://api.spotify.com/v1/browse/categories/${name}/playlists`, {
         headers: {
           Authorization: ` Bearer ${accessToken}`,
         },
-      }
-    );
+      })
+      .catch((error) => seterror(error));
 
     // .then((data) => (play == [] ? setplay(data.playlists.items) : ""));
 
@@ -40,6 +43,8 @@ function Playlist() {
     playlist(value);
   }, 1000);
 
+  // console.log("plaaaa: ", play);
+
   return (
     <>
       <div id="playlistbody">
@@ -47,25 +52,29 @@ function Playlist() {
           <h1 id="ph1"> All Playlist</h1>
         </nav>
         <ul id="playlistul">
-          {play != null
-            ? play.map((item, index) => {
-                return (
-                  <>
-                    <li id="playli" key={Date.now()}>
-                      <img
-                        src={item.images[0].url ? item.images[0].url : ""}
-                        id="pimage"
-                        onClick={() => {
-                          // dispatch(setplaylist(item));
-                          // navigate("/");
-                        }}
-                      />
-                      <p id="playlistname">{item.name}</p>
-                    </li>
-                  </>
-                );
-              })
-            : "loading.."}
+          {play != null ? (
+            play.map((item, index) => {
+              return (
+                <>
+                  <li id="playli" key={Date.now()}>
+                    <img
+                      src={item.images[0].url ? item.images[0].url : ""}
+                      id="pimage"
+                      onClick={() => {
+                        dispatch(setplaylistid(item.id));
+                        navigate("/songlist");
+                      }}
+                    />
+                    <p id="playlistname">{item.name}</p>
+                  </li>
+                </>
+              );
+            })
+          ) : error == null ? (
+            "loading..."
+          ) : (
+            <p id="error">Something went wrong {console.log(error)}</p>
+          )}
         </ul>
       </div>
     </>
