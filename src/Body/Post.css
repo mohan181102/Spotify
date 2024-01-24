@@ -1,0 +1,12 @@
+#imagediv{
+    width: 90px;
+    height: 90px;
+
+}
+
+#postimg{
+    width: 80%;
+    height: auto;
+    background-size: cover;
+    
+}

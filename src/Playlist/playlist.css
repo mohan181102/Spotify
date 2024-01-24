@@ -1,0 +1,106 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+#playlistbody{
+    width: 73vw;
+    height: 80%;
+    position: fixed;
+    overflow-y: scroll;
+    right: 2vw;
+    border-radius: 0.8rem;
+    background-image: linear-gradient(
+        transparent,
+        rgba(255,0,0,0.5)
+    );
+    background-color: rgba(37, 37, 37, 0.7);
+    border: 2px solid black;
+}
+
+#playlistbody::-webkit-scrollbar{
+    display: none;
+}
+
+#playlistul{
+    display: inline;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+#playli{
+    margin: 10px;
+    width: 180px;
+    height: 180px;
+    display: inline;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 0.3rem;
+}
+
+#playli:hover{
+    background-color: rgba(150,150,150, 0.3);
+}
+
+#pimage{
+    margin-top: 4px;
+    width: 90%;
+    height: auto;
+    background-size: cover;
+    object-fit: cover;
+
+}
+
+#playlistname{
+    font-size: medium;
+    width: 100%;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+#pnav{
+    width: 100%;
+    height: 60px;
+    color: white;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    position:sticky;
+
+    background-image: linear-gradient(
+        transparent,
+        180deg,
+        rgba(0,255,0,0.7)        
+    );
+    
+}
+
+#ph1{
+    width: 100%;
+    height: 100%;
+    border-top-right-radius: 0.8rem;
+    border-top-left-radius: 0.8rem;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 20px;
+    
+    z-index: 2;
+    position: sticky;
+    /* border: 1px solid white; */
+}
+
+
+
+
+

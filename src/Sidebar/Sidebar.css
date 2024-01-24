@@ -1,0 +1,165 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+#sidebar{
+    width: 25vw;
+    margin-top: 10px;
+    background-color: black;
+    color: rgba(37, 37, 37, 0.8);
+    height: 80%;
+    border-radius: 0.8rem;
+    padding: 15px;
+    position: fixed;
+    /* border: 1px solid white; */
+    overflow-y: block;
+}
+#sidebar::-webkit-scrollbar{
+    display: none;
+}
+
+#Home{
+    height: 6vh;
+    padding: 5px;
+    width: 98%;
+    padding-top: 7px ;
+    padding-bottom: 7px;
+    font-size: medium;
+    font-weight: 500;
+    color: white;
+    border: transparent;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 10px;
+    background-color:rgba(37, 37, 37, 0.8);
+    margin-bottom: 7px;
+    border-radius: 0.2rem;
+}
+
+#Home:hover{
+    background-color: rgba(150,150,150, 0.3);
+}
+
+#homeicon{
+    padding-right: 4px;
+    width: 20px;
+    height: 100%;
+}
+
+#input{
+    margin-top: 3px;
+    border-radius: 0.4rem;
+    width: 98%;
+    height: 5vh;
+    font-size: medium;
+    margin-bottom: 9px;
+    padding-left: 4px;
+    padding: 2px;
+
+     
+}
+ 
+ 
+
+.ul{
+    width: 100%;
+    height: 85%;
+    padding-left: auto;
+    padding-right: auto;
+    overflow-y: scroll;
+    display: none;
+     
+}
+
+.ul2{
+    width: 100%;
+    height: 85%;
+    color:  white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: auto;
+    background-color: rgba(150,150,150, 0.3);
+    border-radius: 0.3rem;
+    padding-right: auto;
+    overflow-y: scroll;
+    
+     
+     
+}
+.ul::-webkit-scrollbar{
+    display: none;
+}
+
+.ul2::-webkit-scrollbar{
+    display: none;
+}
+
+#serchword{
+    font-size: large;
+}
+
+
+.persong{
+    width: 95%;
+    height: 50px;
+    display: flex;
+    border: 2px solid rgb(50, 50,50);
+    align-items: center;
+    background-color: black;
+    
+    margin-top: 8px;
+    cursor: pointer;
+    overflow: hidden;
+    justify-content: space-between;
+}
+
+#fullsongbtn{
+    height: 80%;
+    width: 10%;
+    padding: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+     
+    background-color: black;
+    border: 0px solid transparent;
+}
+
+#fullsong{
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.persong:hover{
+    background-color: rgba(150,150,150, 0.3);
+}
+#name{
+    font-size: small;
+    color: white;
+    height: auto;
+    width: 65%;
+    overflow: hidden;
+    position: relative;
+    left: 10px;
+    
+}
+#image1{
+    width: 25%;
+    height: 100%;
+      
+
+    position: relative;
+    object-position: center;
+    background-size:cover;
+}
+
+#load{
+    height: 50px;
+    width: 100%;
+    background-color: rgba(150,150,150, 0.3);
+    display: absolute;
+}
