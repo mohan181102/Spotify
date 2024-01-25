@@ -7,10 +7,9 @@ import { useDispatch } from "react-redux";
 
 function Sidebar() {
   const accessToken = useSelector((state) => state.playr.token);
-
+  let screenwidth = window.screen.width;
   const [inputdata, setinputdata] = useState(null);
   const [showdata, setdata] = useState(null);
-
   const dispatch = useDispatch();
 
   async function searchfunction() {
@@ -38,12 +37,28 @@ function Sidebar() {
     }
   }
 
+  function serchbarscale() {
+    console.log("clicked   ");
+    document.getElementById("sidebar").style.scale = 1;
+  }
+
   return (
     <>
+      <button id="serchbtn" onClick={() => serchbarscale()}>
+        &#128269;
+      </button>
+
       <div id="sidebar">
         <button id="Home">
-          <i id="homeicon">&#916;</i>
           Home
+          <button
+            id="cross"
+            onClick={() => {
+              document.getElementById("sidebar").style.scale = 0;
+            }}
+          >
+            &#x2717;
+          </button>
         </button>
         <input
           id="input"
@@ -52,8 +67,11 @@ function Sidebar() {
           onChange={(e) => {
             setinputdata((prev) => (prev = e.target.value)), searchfunction();
           }}
+          onLoad={() => {
+            console.log("loaded..");
+            document.getElementById("input").focus();
+          }}
         />
-
         <ul className="ul" id="searchpage">
           {showdata != null
             ? showdata.map((item) => {

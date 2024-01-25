@@ -112,6 +112,26 @@
      
 }
 
+@media (max-width:600px) {
+    #playlistbody{
+        width: 100vw;
+        right: 0vw;
+
+    }
+    #playlistul{
+        width: 100%;
+        justify-content: space-evenly;
+    }
+    #playli{
+        width: 40%;
+    }
+    #playlistname{
+        margin-top: 4px;
+    }
+}
+
+
+
 
 
 

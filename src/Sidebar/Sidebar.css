@@ -30,7 +30,8 @@
     color: white;
     border: transparent;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
+    align-items: center;
     padding-left: 10px;
     background-color:rgba(37, 37, 37, 0.8);
     margin-bottom: 7px;
@@ -129,13 +130,24 @@
     border: 0px solid transparent;
 }
 
-#fullsongbtn::before:hover{
+#fullsongbtn::before{
     content: " fullsong ";
     color: white;    
     height: fit-content;
-    display: fixed;
-    z-index: 200;
+    position: absolute;
+    z-index: 2;
+    top: 0px;
+    right: 0px;
+    background-color: blue;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 0.2rem;
+    display: none;
     width: auto;
+}
+
+#fullsongbtn:hover::before{
+    display: block;
 }
 
 #fullsong{
@@ -174,13 +186,40 @@
     display: absolute;
 }
 
+#serchbtn{
+    display: none;
+}
+
+#cross{
+    display: none;
+}
+
 @media (max-width:600px) {
     #sidebar{
         display: absolute;
         width: 100vw;
         z-index: 200;
-        transform: scale(0);
+        transition: 5ms;
+        transition-delay: 2ms;
+        transition-timing-function: ease-in-out;
+        scale: 0;
     }
-    
+
+    #cross{
+        display: block;
+    }
+    #serchbtn{
+        display: block;
+        position: absolute;
+        padding: 10px;
+        background-color: transparent;
+        border: 0px solid red;
+        right: 0px;
+        top: 30px;
+        z-index: 50;
+    }
+    #serchbtn:hover{
+        background-color: rgba(150,150,150, 0.3);
+    }
 
 }

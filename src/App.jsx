@@ -47,7 +47,7 @@ export default function token() {
     setcondition(false);
     // console.log("setinter");
   }, 5000);
-  console.log(stoat);
+  // console.log(stoat);
 
   let uri = useSelector((state) => state.playr.data);
 
