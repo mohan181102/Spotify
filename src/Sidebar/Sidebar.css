@@ -207,6 +207,7 @@
 
     #cross{
         display: block;
+       
     }
     #serchbtn{
         display: block;
@@ -216,7 +217,7 @@
         border: 0px solid red;
         right: 0px;
         top: 30px;
-        z-index: 50;
+        z-index: 200;
     }
     #serchbtn:hover{
         background-color: rgba(150,150,150, 0.3);

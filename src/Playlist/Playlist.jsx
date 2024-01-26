@@ -19,6 +19,10 @@ function Playlist() {
     setvalue(data.name);
   }
 
+  if (data == null) {
+    navigate("/");
+  }
+
   async function playlist(name) {
     let data = await axios
       .get(`https://api.spotify.com/v1/browse/categories/${name}/playlists`, {
@@ -73,7 +77,7 @@ function Playlist() {
           ) : error == null ? (
             "loading..."
           ) : (
-            <p id="error">Something went wrong {console.log(error)}</p>
+            <p id="error">Something went wrong. {console.log(error)}</p>
           )}
         </ul>
       </div>

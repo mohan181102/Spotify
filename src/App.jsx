@@ -2,7 +2,7 @@ import Sidebar from "./Sidebar/Sidebar";
 import "./App.css";
 import { useSelector } from "react-redux";
 import Player from "./Player/Player";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { setoken } from "./Store/player";
@@ -17,6 +17,7 @@ const client_secret = "016112708a294dcbaaaccb94629a0918";
 
 export default function token() {
   const [atoken, setatoken] = useState("");
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [condition, setcondition] = useState(true);
   const stoat = useSelector((state) => state.playr.token);
@@ -50,7 +51,7 @@ export default function token() {
   // console.log(stoat);
 
   let uri = useSelector((state) => state.playr.data);
-
+  // window.location.reload(() => navigate("/"));
   return (
     <div id="app">
       <Sidebar />,
