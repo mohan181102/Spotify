@@ -14,9 +14,10 @@ function Playlist() {
   const [value, setvalue] = useState(null);
   const [error, seterror] = useState(null);
   console.log("playlis tok:- ", accessToken);
+  console.log(data);
   if (value == null) {
     // settoke(accessToken);
-    setvalue(data.name);
+    setvalue(data.id ? data.id : data.name);
   }
 
   if (data == null) {
@@ -44,7 +45,9 @@ function Playlist() {
   }
 
   setTimeout(() => {
-    playlist(value);
+    if (error == null && play == null) {
+      playlist(value);
+    }
   }, 1000);
 
   // console.log("plaaaa: ", play);
@@ -58,18 +61,20 @@ function Playlist() {
         <ul id="playlistul">
           {play != null ? (
             play.map((item, index) => {
+              // console.log(play);
               return (
                 <>
                   <li id="playli" key={Date.now()}>
                     <img
-                      src={item.images[0].url ? item.images[0].url : ""}
+                      src={item != null ? item.images[0].url : ""}
+                      aria-placeholder="not load"
                       id="pimage"
                       onClick={() => {
-                        dispatch(setplaylistid(item.id));
+                        dispatch(setplaylistid(item != null ? item.id : ""));
                         navigate("/songlist");
                       }}
                     />
-                    <p id="playlistname">{item.name}</p>
+                    <p id="playlistname">{item != null ? item.name : ""}</p>
                   </li>
                 </>
               );
