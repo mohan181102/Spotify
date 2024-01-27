@@ -11,6 +11,9 @@ function Player({ src }) {
         <AudioPlayer
           autoPlay
           src={src}
+          style={{
+            backgroundColor: "black",
+          }}
           onPlay={(e) => console.log("onPlay")}
           // other props here
         />
