@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 function Body() {
   const [categorie, setcat] = useState(null);
   const [scrol, setscroll] = useState(false);
+  const dumyarrray = [18];
   const dispatch = useDispatch();
   const accessToken = useSelector((state) => state.playr.token);
   const navigate = useNavigate();
@@ -40,9 +41,10 @@ function Body() {
   }
 
   function scroll(e) {
-    if (e.target.scrollTop == "53") {
-      setscroll(true);
-    }
+    // if (e.target.scrollTop == "53") {
+
+    // }
+    return;
   }
 
   return (
@@ -52,6 +54,7 @@ function Body() {
           <h1 id="bh1" className={scrol ? "bh1class" : ""}>
             Categories
           </h1>
+          <button></button>
         </nav>
         <ul id="bodyul">
           {categorie != null
@@ -72,7 +75,9 @@ function Body() {
                   </>
                 );
               })
-            : "loading"}
+            : dumyarrray.map((item) => {
+                // return <li id="dummyli"></li>;
+              })}
         </ul>
       </div>
     </>

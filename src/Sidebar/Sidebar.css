@@ -85,8 +85,8 @@
     background-color: rgba(150,150,150, 0.3);
     border-radius: 0.8rem;
     /* padding-right: auto; */
-    overflow-y: scroll;
-    
+    /* overflow-y: scroll; */
+    /* background-color: green; */
      
      
 }
@@ -99,7 +99,36 @@
 }
 
 #serchword{
-    font-size: large;
+    font-size: larger;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* animation: serch;
+    animation-duration: 2s;
+    animation-delay: 5ms;
+    animation-iteration-count:3; */
+    /* border: 1px solid red; */
+}
+
+@keyframes serch {
+    0%{
+        background-color: rgb(50, 50,50);
+    }
+    25%{
+        background-color: rgba(150,150,150, 0.3);
+    }
+    50%{
+        background-color: rgb(50, 50,50);
+    }
+    75%{
+        background-color: rgba(150,150,150, 0.3);
+    }
+    100%{
+        background-color: rgb(50, 50,50);
+    }
 }
 
 
@@ -166,12 +195,13 @@
     height: auto;
     width: 65%;
     overflow: hidden;
+    text-align: left;
     position: relative;
     left: 10px;
     
 }
 #image1{
-    width: 25%;
+    width: 60px;
     height: 100%;
       
 

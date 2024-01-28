@@ -13,6 +13,7 @@ function Player({ src }) {
           src={src}
           style={{
             backgroundColor: "black",
+            color: "white",
           }}
           onPlay={(e) => console.log("onPlay")}
           // other props here
