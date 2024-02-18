@@ -87,7 +87,7 @@ function Sidebar() {
                             : ""
                         }
                         onClick={() => {
-                          dispatch(setplayer(item.preview_url));
+                          dispatch(setplayer(item));
                         }}
                       />
 

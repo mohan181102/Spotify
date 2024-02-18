@@ -51,7 +51,6 @@ export default function token() {
   // console.log(stoat);
 
   let uri = useSelector((state) => state.playr.data);
-  // window.location.reload(() => navigate("/"));
   return (
     <div id="app">
       <Sidebar />,

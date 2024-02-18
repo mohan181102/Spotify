@@ -58,7 +58,7 @@ function Songs() {
                 id="songli"
                 key={item.track.id}
                 onClick={() => {
-                  dispatch(setplayer(item.track.preview_url));
+                  dispatch(setplayer(item.track));
                 }}
               >
                 <p id="index">{index + 1}</p>

@@ -1,24 +1,40 @@
-import AudioPlayer from "react-h5-audio-player";
-import "react-h5-audio-player/lib/styles.css";
+import React, { useEffect, useRef, useState } from "react";
 import "./Player.css";
-// import "react-h5-audio-player/lib/styles.less";
-// import 'react-h5-audio-player/src/styles.scss' Use SASS
 
 function Player({ src }) {
+  const audio = useRef(null);
+
+  useEffect(() => {
+    audio.current.load();
+    if (src) {
+      if (src.preview_url == undefined || null) {
+        alert("preview now present");
+      }
+    }
+    console.log(src);
+  }, [src]);
+
+  // useEffect(() => {});
   return (
     <div id="player">
-      {
-        <AudioPlayer
-          autoPlay
-          src={src}
-          style={{
-            backgroundColor: "black",
-            color: "white",
-          }}
-          onPlay={(e) => console.log("onPlay")}
-          // other props here
-        />
-      }
+      <img
+        id="img-on-player"
+        src={
+          src
+            ? src.album.images[0] !== undefined
+              ? src.album.images[0].url
+              : ""
+            : ""
+        }
+      />
+      {/* <input value={} type="range" /> */}
+      <audio
+        id="audio"
+        ref={audio}
+        controls
+        src={src ? src.preview_url : ""}
+        autoPlay
+      ></audio>
     </div>
   );
 }

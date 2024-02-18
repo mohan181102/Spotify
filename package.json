@@ -27,7 +27,8 @@
     "react-spotify-player": "^1.0.4",
     "react-spotify-web-playback": "^0.14.2",
     "request": "^2.88.2",
-    "spotify-web-api-node": "^5.0.2"
+    "spotify-web-api-node": "^5.0.2",
+    "use-sound": "^4.0.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
