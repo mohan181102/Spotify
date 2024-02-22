@@ -9,10 +9,7 @@
     align-items: center;
     justify-content: space-between;
     transition: all 100ms ease-in;
-    border: 1px solid white;
-    background: linear-gradient(
-        to top ,black, orange
-    );
+    background-color: green;
 }
 
 #img-on-player{
