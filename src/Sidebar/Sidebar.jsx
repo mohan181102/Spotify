@@ -38,7 +38,6 @@ function Sidebar() {
   }
 
   function serchbarscale() {
-    console.log("clicked   ");
     document.getElementById("sidebar").style.scale = 1;
   }
 
@@ -87,6 +86,7 @@ function Sidebar() {
                             : ""
                         }
                         onClick={() => {
+                          console.log("sdsd", item);
                           dispatch(setplayer(item));
                         }}
                       />

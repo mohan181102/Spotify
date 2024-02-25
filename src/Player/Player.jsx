@@ -3,21 +3,24 @@ import "./Player.css";
 
 function Player({ src }) {
   const audio = useRef(null);
+  const input = useRef(null);
   const [value, setvalue] = useState(null);
   const [playstate, setplaystate] = useState(false);
 
   // CREATE SONGSTATUS BAR
 
-  setTimeout(() => {
+  const interval = setInterval(() => {
     if (audio.current.currentTime <= audio.current.duration) {
       setvalue(
         (Math.floor(audio.current.currentTime) * 100) /
           Math.floor(audio.current.duration)
       );
     } else {
+      setvalue(0);
+      clearInterval(interval);
       return;
     }
-  }, 1000);
+  }, 200);
 
   // LOAD EVERY SONG SELECTION
 
@@ -58,10 +61,17 @@ function Player({ src }) {
         }
       />
 
-      <div>
-        <input type="range" value={value} />
-        <button onClick={() => statemanage()}>
-          {playstate ? "Pause" : "Play"}
+      <div className={`inputrange`}>
+        <input className="input" type="range" ref={input} value={value} />
+        <button
+          className={`${playstate ? "pausebtn" : "playbtn"}`}
+          onClick={() => statemanage()}
+        >
+          {playstate ? (
+            <i class="fa-solid fa-pause"></i>
+          ) : (
+            <i class="fa-solid fa-play"></i>
+          )}
         </button>
       </div>
 

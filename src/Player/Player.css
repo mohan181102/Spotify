@@ -7,22 +7,94 @@
     left: 1%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     transition: all 100ms ease-in;
     background-color: green;
 }
 
 #img-on-player{
-    width: auto;
-    height: 92%;
-    margin-left: 10px;
+    width: 60px;
+    height: auto;
+    margin-left: 20px;
     background-size: cover;
     border-radius: 0.3rem;
-
+    position: fixed;
+    left: 0px;
 }
 
  
 
- 
+ .inputrange{
+    width: 40%;
+    height: 100%;
+    background: transparent;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid black; */
+ }
+
+ .input{
+    width: 80%;
+    height: 5px;
+    
+ }
 
  
+
+ .input::-webkit-slider-runnable-track{
+    background-color: gray;
+    
+    height: 5px ;
+    border-radius: 0.5rem;
+    cursor: pointer;
+ }
+ 
+
+ .input::-webkit-slider-thumb{
+   background-color: pink;
+   appearance: none;
+   width: 5px ;
+   height: 5px;
+   
+ }
+
+/***** Thumb Styles *****/
+/***** Chrome, Safari, Opera, and Edge Chromium *****/
+input[type=range]::-webkit-slider-thumb {
+  
+   height: 33px;
+   width: 200px;
+  
+   
+   cursor: pointer;
+   /* background: transparent; */
+   margin-top: -5px;
+ }
+
+ .input::-webkit-slider-thumb{
+   width: 30px;
+ }
+
+ .playbtn{
+   width: 30px;
+   height: 30px;
+   border-radius: 50%;
+   margin-top: 5px;
+   background-color: red;
+   transition: all 500ms;
+   border: none;
+   outline: none;
+ }
+ 
+ .pausebtn{
+   width: 30px;
+   height: 30px;
+   border-radius: 50%;
+   border: none;
+   outline: none;
+   margin-top: 5px;
+   background-color: blue;
+   transition: all 500ms;
+ }

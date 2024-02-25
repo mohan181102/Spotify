@@ -40,13 +40,6 @@ function Body() {
     categories();
   }
 
-  function scroll(e) {
-    // if (e.target.scrollTop == "53") {
-
-    // }
-    return;
-  }
-
   return (
     <>
       <div id="body" onScroll={(e) => scroll(e)}>
@@ -54,7 +47,6 @@ function Body() {
           <h1 id="bh1" className={scrol ? "bh1class" : ""}>
             Categories
           </h1>
-          <button></button>
         </nav>
         <ul id="bodyul">
           {categorie != null
