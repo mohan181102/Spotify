@@ -9,7 +9,7 @@ function Player({ src }) {
 
   // CREATE SONGSTATUS BAR
 
-  const interval = setInterval(() => {
+  setInterval(() => {
     if (audio.current.currentTime <= audio.current.duration) {
       setvalue(
         (Math.floor(audio.current.currentTime) * 100) /

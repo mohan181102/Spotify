@@ -16,7 +16,6 @@ function Body() {
   const navigate = useNavigate();
   let date = new Date().toJSON();
 
-  console.log("token", accessToken);
   async function categories() {
     const data = await axios.get(
       "https://api.spotify.com/v1/browse/categories",
